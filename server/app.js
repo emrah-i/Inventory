@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 8060
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
