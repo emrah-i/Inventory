@@ -1,2 +1,2 @@
-web: cd server && node server.js
-frontend: npm start --prefix client
+web: cd server && yarn start
+frontend: cd client && yarn start
