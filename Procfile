@@ -1,2 +1,2 @@
-web: yarn start
-client: cd client && yarn start
+web: node server
+client: cd client && npm start
