@@ -1,2 +1,2 @@
-web: cd server && yarn start
-frontend: cd client && yarn start
+web: node start
+client: cd client && yarn start
