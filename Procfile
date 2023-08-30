@@ -1,2 +1,2 @@
-web: node start
+web: yarn start
 client: cd client && yarn start
