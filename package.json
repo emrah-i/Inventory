@@ -20,7 +20,6 @@
       "start": "npm run start:server && npm run start:client",
       "start:server": "node server",
       "start:client": "cd client && npm start",
-      "install": "cd .. && yarn install",
-      "build": "react-scripts build"  
+      "install": "cd .. && yarn install"
     }
   }
