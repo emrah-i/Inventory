@@ -2,9 +2,9 @@
     "name": "your-project",
     "version": "1.0.0",
     "scripts": {
-      "start": "npm run start:backend && npm run start:frontend",
-      "start:backend": "node server",
-      "start:frontend": "cd client && npm start",
-      "install": "cd frontend && npm install && cd ../backend && npm install"
+      "start": "npm run start:server && npm run start:client",
+      "start:server": "node server",
+      "start:client": "cd client && npm start",
+      "install": "cd client && npm install && cd ../server && npm install"
     }
   }
