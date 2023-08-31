@@ -1,5 +1,5 @@
 {
-    "name": "your-project",
+    "name": "inventory",
     "version": "1.0.0",
     "scripts": {
       "start": "npm run start:server && npm run start:client",
