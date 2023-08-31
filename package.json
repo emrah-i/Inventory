@@ -1,6 +1,7 @@
 {
     "name": "inventory",
     "version": "1.0.0",
+    "license": "ISC",
     "scripts": {
       "start": "npm run start:server && npm run start:client",
       "start:server": "node server",
