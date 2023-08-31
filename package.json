@@ -21,6 +21,6 @@
       "start:server": "node server",
       "start:client": "cd client && npm start",
       "install": "cd .. && yarn install",
-      "build": "webpack"
+      "build": "react-scripts build"  
     }
   }
