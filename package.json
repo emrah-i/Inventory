@@ -20,6 +20,6 @@
       "start": "npm run start:server && npm run start:client",
       "start:server": "node server",
       "start:client": "cd client && npm start",
-      "install": "cd .. && npm install"
+      "install": "cd .. && yarn install"
     }
   }
