@@ -1,0 +1,378 @@
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
+    color: white !important;
+    background: linear-gradient(#58D68D, #28B463) !important;
+    background-blend-mode: overlay;
+    font-size: 1.75rem;
+    padding-top: 5rem;
+}
+
+body > * {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    position: fixed !important;
+    justify-self: start !important;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: #58D68D;
+    box-shadow: 0px 0px 1rem .5rem #00000030;
+}
+
+nav a {
+    color: white !important;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+img {
+    width: 50vw;
+    border-radius: 1rem;
+}
+
+.link-item {
+    text-decoration: none;
+}
+
+.link-item:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.link-item:nth-child(1) {
+    margin: auto 1rem;
+}
+
+main {
+    margin: 5rem 5%;
+    border-radius: 1rem;
+    padding: 2rem;
+    gap: 10rem;
+}
+
+#item-form > * > *, #edit-page > * > * {
+    display: block;
+    padding: .5rem;
+}
+
+.btn-item {
+    width: fit-content;
+    display: inline;
+    font-size: 1.5rem;
+    background-color: #1E8449A0;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem 1rem !important;
+    margin: 1rem 0 0;
+    transition: all .3s ease-in-out;
+}
+
+.btn-item:hover {
+    cursor: pointer;
+    border-radius: 1.5rem;
+    transform: scale(1.1);
+}
+
+.btn-item:disabled {
+    background-color: #27374680;
+}
+
+#error {
+    display: none;
+    color: red;
+}
+
+input {
+    width: 50% !important;
+    border-radius: 1rem;
+    margin: .5rem 0;
+    padding: .5rem;
+    border: 2px solid #c0c0c080;
+}
+
+#send-form {
+    display: none;
+}
+
+#add_btn {
+    display: none;
+}
+
+.items-display {
+    background-color: white;
+    color: black !important;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 5rem;
+    height: fit-content;;
+    text-align: center;
+}
+
+.items-display th {
+    border-bottom: .25rem solid var(--sec-color);
+}
+
+.items-display td {
+    border-top: .25rem solid var(--sec-color); 
+}
+
+.items-display td, .items-display th {
+    margin: 5rem;
+    padding: 1rem;
+}
+
+.items-display td:nth-child(4) {
+    width: 20%;
+}
+
+.items-display td:nth-child(4) > * {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.items-display .btn-item {
+    margin: auto !important;
+}
+
+.all-display {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+    margin: 10vh 0;
+}
+
+#add-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.extra-btn {
+    background-color: #73C6B6 !important;
+    display: none;
+}
+
+#barcodeCanvas {
+    display: none;
+    margin: .8rem 0 0;
+    height: auto;
+}
+
+#edit-form {
+    display: none;
+}
+
+.delete-btn {
+    background-color: #E74C3CF0 !important;
+}
+
+.modal-content {
+    color: black;
+    box-shadow: 0px 0px 1rem .5rem #00000020;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: .2rem solid var(--main-color);
+    margin: 10rem auto;
+    padding: 1rem;
+    width: 35%;
+}
+
+.modal-content > div {
+    margin: 2rem auto 0;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listBarcodeItem {
+    width: fit-content;
+    position: relative;
+    cursor: pointer;
+}
+
+.tip {
+    width: fit-content;
+    position: absolute;
+    visibility: hidden;
+    background-color: #000000D0;
+    color:  white;
+    text-align: center;
+    border-radius: .5rem;
+    font-size: 1rem !important;
+    padding: .5rem;
+    z-index: 1;
+    bottom: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.listBarcodeItem:hover .tip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    display: none;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    background-color: #58D68D;
+    transition: all .3s ease-in-out;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    box-shadow: 0px 0px 1rem .5rem #00000020;
+}
+
+.edit-btns, .send-btns {
+    display: flex !important;
+    gap: 1rem;
+    justify-content: start;
+    flex-wrap: wrap;    
+}
+
+.cancel-btn {
+    background-color: #73C6B6;
+}
+
+#toggle-btn {
+    border: .2rem solid white;
+    padding: auto
+}
+
+#toggle-btn:focus {
+    outline: 0 !important;
+    box-shadow: 0px 0px 1rem .5rem #00000020;
+}
+
+#toggle-btn svg {
+    padding-bottom: .1rem;
+    font-size: 1.75rem;
+    fill: white;
+}
+
+#loading {
+    display: none;
+    position: fixed;
+    bottom: 30%;
+    left: 41.5%;
+    background-color: transparent;
+    transform: scale(.75);
+}
+
+@media (min-width: 1200px) {
+    .items-display .btn-item {
+        font-size: 1.4rem;
+    }
+    img {
+        width: 15vw;
+    }
+    canvas {
+        width: 20vw;
+    }
+}
+
+@media (max-width: 1200px) {
+    .items-display img {
+        width: 15vw;
+    }
+    .items-display canvas {
+        width: 15vw;
+    }
+    .items-display .btn-item {
+        font-size: 1.2rem;
+    }
+    img {
+        width: 30vw;
+    }
+    canvas {
+        width: 30vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .all-display {
+        font-size: 1.3rem !important;
+    }
+    .items-display .btn-item {
+        font-size: 1.2rem;
+    }
+    .items-display th:nth-child(1) {
+        display: none;
+    }
+    .items-display td:nth-child(1) {
+        display: none;
+    }
+    .items-display canvas {
+        width: 20vw;
+    }
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .items-display th:nth-child(4) {
+        display: none;
+    }
+    .items-display td:nth-child(4) {
+        display: none;
+    }
+    html {
+        font-size: 13px;
+    }
+    img {
+        width: 40vw;
+    }
+    input {
+        width: 75% !important;
+    }
+    canvas {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .all-display {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        font-size: 1.5rem !important;
+    }
+    html {
+        font-size: 12px;
+    }
+    img {
+        width: 40vw;
+    }
+    input {
+        width: 80% !important;
+    }
+    canvas {
+        width: 50vw;
+    }
+}
