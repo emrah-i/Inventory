@@ -3,20 +3,24 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import path, { dirname }  from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from "dotenv";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const dotenvPath = path.join(__dirname, '.env')
+dotenv.config({ path: dotenvPath })
 
 const app = express();
 const port = process.env.PORT || 8060
 
-app.use(express.static(path.join(__dirname + "/public")));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({
     extended: true
 }))
 app.use(express.json())
+const uri = `mongodb+srv://ibraem1026:${process.env.DB_PASS}@inventory.ylzqqd5.mongodb.net/InventoryDB`;
 
-mongoose.connect("mongodb://127.0.0.1:27017/inventoryDB", {
+mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
@@ -34,8 +38,6 @@ app.get('/all', async (req, res) => {
     const all = await Item.find({});
     res.send(all);
 })
-
-// work on loading items
 
 app.get('/allcodes', async (req, res) => {
     const all = await Item.find({});
