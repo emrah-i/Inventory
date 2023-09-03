@@ -52,16 +52,6 @@ function Send(props) {
         if (response.status === 200) {
             navigate('/all', { replace: true })
             popupShow(props, "Item successfuly updated!")
-
-            setTimeout(()=>{
-                const inputElement = document.querySelector('#all_search_input')
-                inputElement.value = item.name;
-                let keywordsArray = item.name.toLowerCase().trim().split(' ')
-                const searchItems = allDisplay.filter(item=> {
-                return keywordsArray.some(substring => item.name.toLowerCase().includes(substring));
-                })
-                setSearchAll(searchItems)
-            }, 500)
         }
         if (response.status === 404) {
             navigate('/', { replace: true })

@@ -13,7 +13,7 @@ dotenv.config({ path: dotenvPath })
 const app = express();
 const port = process.env.PORT || 8060
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 app.use(bodyParser.urlencoded({
     extended: true
 }))
@@ -34,7 +34,7 @@ const itemSchema = new mongoose.Schema({
 
 const Item = new mongoose.model('Item', itemSchema);
 
-app.get('/all', async (req, res) => {
+app.get('/allitems', async (req, res) => {
     const all = await Item.find({});
     res.send(all);
 })
@@ -71,12 +71,12 @@ app.get('/delete/:barcode', async (req, res) => {
 
 })
 
-app.post('/add', async (req, res) => {
+app.post('/additem', async (req, res) => {
     const {name, image, quantity, barcode} = req.body
 
     const item = new Item({name: name, image: image, quantity: quantity, barcode: barcode})
     await item.save()
-    res.redirect('/view/' + barcode);
+    res.status(200).redirect('/all');
 });
 
 app.patch('/edit/:barcode', async (req, res) => {
@@ -128,6 +128,11 @@ app.patch('/edit/:barcode', async (req, res) => {
         }
     }
 }) 
+
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});  
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}.`);

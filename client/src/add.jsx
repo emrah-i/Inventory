@@ -101,7 +101,7 @@ function AddForm() {
         }, 1000)
     }
 
-    return (<form id="add-form" action="/add" method="post">
+    return (<form id="add-form" action="/additem" method="post">
                 <h1>Item Information:</h1>
                 <input type="hidden" name="barcode" />
                 <label>Name:</label>

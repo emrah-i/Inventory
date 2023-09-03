@@ -12,16 +12,16 @@ function Nav() {
             <div className="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
                 <ul className="navbar-nav">
                 <li className="nav-item">
-                    <Link className="link-item" to="/">Home</Link>
+                    <Link className="link-item" to="/" replace>Home</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="link-item" to="/add">Add Item</Link>
+                    <Link className="link-item" to="/add" replace>Add Item</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="link-item" to="/edit">Edit Item</Link>
+                    <Link className="link-item" to="/edit" replace>Edit Item</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="link-item" to="/all">All Items</Link>
+                    <Link className="link-item" to="/all" replace>All Items</Link>
                 </li>
                 </ul>
             </div>

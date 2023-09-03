@@ -21,16 +21,6 @@ function EditView(props) {
         if (response.status === 200) {
             navigate('/all', { replace: true })
             popupShow(props, "Item successfully edited!")
-
-            setTimeout(()=>{
-                const inputElement = document.querySelector('#all_search_input')
-                inputElement.value = item.name;
-                let keywordsArray = item.name.toLowerCase().trim().split(' ')
-                const searchItems = allDisplay.filter(item=> {
-                return keywordsArray.some(substring => item.name.toLowerCase().includes(substring));
-                })
-                setSearchAll(searchItems)
-            }, 250)
             }
         if (response.status === 404) {
             navigate('/all', { replace: true })
@@ -43,11 +33,11 @@ function EditView(props) {
         const response = await fetch(`/delete/${props.item.barcode}`)
         
         if (response.status === 200) {
-            navigate('/edit', { replace: true })
+            navigate('/all', { replace: true })
             popupShow(props, "Item successfully deleted!")
         }
         if (response.status === 404) {
-            navigate('/edit', { replace: true })
+            navigate('/all', { replace: true })
             popupShow(props, "Error!", 'error')
         }
     }

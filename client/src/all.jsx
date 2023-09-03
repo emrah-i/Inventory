@@ -12,7 +12,7 @@ function All(props) {
     useEffect(() => {
       async function fetchData() {
         try {
-          const response = await fetch("/all");
+          const response = await fetch("/allitems");
           const data = await response.json();
           setAllDisplay(data);
           setSearchAll(data)
