@@ -1,5 +1,7 @@
 # Inventory
 
+<a href="https://inventory.applikuapp.com">inventory.applikuapp.com</a>
+
 <br/>
 
 <br/>
