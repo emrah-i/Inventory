@@ -3,7 +3,7 @@
 <a href="https://inventory.applikuapp.com">inventory.applikuapp.com</a>
 
 <br/>
-<img src="Inventory.gif" alt="gif" />
+<img src="inventory-man.gif" alt="gif" />
 <br/>
 
 <h2>About the Project:</h2>
