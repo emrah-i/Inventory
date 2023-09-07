@@ -1,10 +1,6 @@
-# Inventory
+<h1 align="center">Inventory Manager</h1>
+<h3 align="center"><a href="https://inventory.applikuapp.com">inventory.applikuapp.com</a></h3>
 
-<a href="https://inventory.applikuapp.com">inventory.applikuapp.com</a>
-
-<br/>
-<img src="inventory-man.gif" alt="gif" />
-<br/>
 
 <h2>About the Project:</h2>
 <p>When I embark on creating an application, I prioritize projects that resonate with me, as it ensures my genuine enthusiasm throughout the development process. 
